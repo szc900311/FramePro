@@ -1,0 +1,50 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.example.sunzicheng.framepro"
+        minSdkVersion 21
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation dependent.support.app_compat
+    implementation dependent.support.recyclerview
+    implementation dependent.support.cardview
+    implementation dependent.support.design
+
+    implementation dependent.glide.runtime
+
+    implementation dependent.dagger.runtime
+    implementation dependent.dagger.android
+    implementation dependent.dagger.android_support
+    implementation dependent.constraint_layout
+    implementation dependent.kotlin.stdlib
+
+    implementation dependent.retrofit.runtime
+    implementation dependent.retrofit.gson
+    implementation dependent.rx_android
+    implementation dependent.rxjava2
+
+//    implementation dependent.room.runtime
+//    implementation dependent.room.compiler
+//    implementation dependent.room.rxjava2
+//    implementation dependent.room.testing
+}
